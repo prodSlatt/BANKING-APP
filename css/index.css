@@ -1,7 +1,55 @@
+/* Add a black background color to the top navigation */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  overflow: hidden;
+  z-index: 999; /* Make the navigation bar appear on top of other elements */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #868686;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #424242;
+  color: white;
+}
+
+/*VIDEO*/
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background: url("shot.mp4") no-repeat center center fixed;
+  background-size: cover;
+}
+
 /* colour of page*/
 .login {
   /*size of the box*/
-  width: 320px;
+  width: 175px;
   /*size of space around content*/
   padding: 50px;
   /*size of borderline*/
@@ -16,21 +64,37 @@
   align-items: center;
   /*colour of box*/
   background-color: rgb(235, 234, 234);
+
   font-family: "Oswald", sans-serif;
+
+  box-shadow: 7px 7px grey;
+
+  /*shaking animation duration*/
+  animation: login-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes login-animation {
+  0% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
 }
 
 .container {
-  height: 100vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 25vh;
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #f3e1ce, #d3ab9e);
+  background-image: linear-gradient(to bottom right, #161030, #fff099);
   background-color: #cccccc;
   height: 100%;
-  cursor: url("../cursors/gam1109.cur"), auto;
+  cursor: url("../assets/cursors/gam1109.cur"), auto;
 }
 
 button {
@@ -51,20 +115,49 @@ input {
   padding: 2px;
   /*size of borderline*/
   border: 2px solid rgb(194, 193, 193);
-  /*corners of box*/
+  /*corners of input box*/
   border-radius: 3px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.circle {
-  height: 24px;
-  width: 24px;
-  border-radius: 24px;
-  background-color: black;
+.cursor-trail {
   position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 99999999; /* so that it stays on top of all other elements */
+  z-index: 999999; /* Ensure the cursor trail appears above other elements */
+}
+
+.cursor-trail:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Adjust the color and transparency */
+  animation: cursor-trail-animation 1.5s infinite;
+}
+
+@keyframes cursor-trail-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
 }

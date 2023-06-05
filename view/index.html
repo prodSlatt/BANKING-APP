@@ -14,6 +14,21 @@
     <title>Login Page</title>
   </head>
   <body>
+    <div class="cursor-trail"></div>
+
+    <!-- Nav Bar-->
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+
+    <!-- Video Background-->
+    <video autoplay muted loop id="myVideo">
+      <source src="shot.mp4" type="video/mp4" />
+    </video>
+
     <!-- Login Box -->
     <div class="container">
       <div class="login">
@@ -28,7 +43,7 @@
         </h5>
 
         <!-- BUTTON -->
-        <button onclick="myFunction()">Login</button>
+        <button onclick="myFunction()" id="myButton">Login</button>
 
         <div class="circle"></div>
         <div class="circle"></div>
