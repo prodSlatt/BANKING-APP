@@ -1,40 +1,3 @@
-/* Add a black background color to the top navigation */
-.topnav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000000;
-  overflow: hidden;
-  z-index: 999; /* Make the navigation bar appear on top of other elements */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  display: flex;
-  justify-content: center;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #868686;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #424242;
-  color: white;
-}
-
 /*VIDEO*/
 #myVideo {
   position: fixed;
@@ -91,8 +54,6 @@
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #161030, #fff099);
-  background-color: #cccccc;
   height: 100%;
   cursor: url("../assets/cursors/gam1109.cur"), auto;
 }
