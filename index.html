@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="cursor-trail"></div>
+
+    <!-- Video Background-->
+  <div id="video-background">
+    <iframe src="https://www.youtube.com/embed/EL2XOIVzvlU?autoplay=1&loop=1&playlist=EL2XOIVzvlU&mute=1&controls=0&showinfo=0&modestbranding=1&fs=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+
+    <!-- Login Box -->
+    <div class="container">
+      <div class="login">
+        <h3>Login</h3>
+        <label for="user">Username</label>
+        <input type="text" id="user" /><br />
+
+        <label for="pass">Password</label>
+        <input type="text" id="pass" />
+        <h5>
+          <a href="passchange.html">Forgot Your Password?</a>
+        </h5>
+
+        <!-- BUTTON -->
+        <button onclick="login()" id="myButton">Login</button>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/global.js"></script>
+  </body>
+</html>

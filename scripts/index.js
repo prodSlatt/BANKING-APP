@@ -1,56 +1,47 @@
-/*check for login info here*/
+      const profiles = [
+        {
+          firstName: "Joe",
+          lastName: "Mama",
+          balance: 1500,
+          savings: 5000,
+          username: "joemama",
+          password: "password2021",
+        },
+        {
+          firstName: "Mike",
+          lastName: "Hawk",
+          balance: 2300,
+          savings: 120,
+          username: "mikehawk",
+          password: "password2022",
+        },
+        {
+          firstName: "Ben",
+          lastName: "Dover",
+          balance: 12,
+          savings: 50000,
+          username: "bendover",
+          password: "password2023",
+        },
+      ];
 
-/* Object Database */
-let profiles = [
-  {
-    firstName: "Joe",
-    lastName: "Mama",
-    balance: 1500,
-    savings: 5000,
-    username: "joemama",
-    password: "password2021",
-  },
+    function login() {
+      const username = document.getElementById("user").value;
+      const password = document.getElementById("pass").value;
 
-  {
-    firstName: "Mike",
-    lastName: "Hawk",
-    balance: 2300,
-    savings: 120,
-    username: "mikehawk",
-    password: "password2022",
-  },
+      const profile = profiles.find(
+        (profile) => profile.username === username && profile.password === password
+      );
 
-  {
-    firstName: "Ben",
-    lastName: "Dover",
-    balance: 12,
-    savings: 50000,
-    username: "bendover",
-    password: "password2023",
-  },
-];
+      if (profile) {
+        // Save the profile in local storage
+        localStorage.setItem('loggedInProfile', JSON.stringify(profile));
 
-function myFunction() {
-  for (var i = 0; i < profiles.length; i++) {
-    var account = profiles[i];
-    if (
-      document.getElementById("user").value === account.username &&
-      document.getElementById("pass").value === account.password
-    ) {
-      window.location.href = "../view/dashboard.html";
+        // Redirect to the dashboard page
+        window.location.href = "view/dashboard.html";
+      } 
+
+      // Display an error message
+      document.getElementById("error").textContent = "Incorrect username or password.";
+      
     }
-  }
-}
-
-/* Hmmm */
-document.addEventListener("mousemove", function (e) {
-  var cursorTrail = document.querySelector(".cursor-trail");
-  var trail = document.createElement("div");
-  trail.classList.add("cursor-trail");
-  trail.style.left = e.pageX + "px";
-  trail.style.top = e.pageY + "px";
-  cursorTrail.appendChild(trail);
-  setTimeout(function () {
-    trail.remove();
-  }, 1500); // Adjust the duration of the cursor trail
-});
