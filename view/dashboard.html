@@ -17,13 +17,33 @@
             <h2>Dashboard</h2>
     
         </div>
-
-        <div class="widget">
+        <div class="widget1">
           <h2>Balance</h2>
           <p>£10.000</p>
+          <canvas class="my-chart"></canvas>
+          <canvas id="chartId" aria-label="chart" height="350" width="580"></canvas>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+   <script>
+      var chrt = document.getElementById("chartId").getContext("2d");
+      var chartId = new Chart(chrt, {
+         type: 'doughnut',
+         data: {
+            labels: ["HTML", "CSS", "JAVASCRIPT", "CHART.JS", "JQUERY", "BOOTSTRP"],
+            datasets: [{
+            label: "online tutorial subjects",
+            data: [20, 40, 13, 35, 20, 38],
+            backgroundColor: ['yellow', 'aqua', 'pink', 'lightgreen', 'gold', 'lightblue'],
+            hoverOffset: 5
+            }],
+         },
+         options: {
+            responsive: false,
+         },
+      });
+   </script>
         </div>
 
-        <div class="widget">
+        <div class="widget2">
           <h2>Savings</h2>
           <p>£540</p>
         </div>
@@ -32,31 +52,9 @@
           <h2>Need a loan or maybe just some help?</h2>
           <p>Click Here</p>
         </div>
-
-      <div class="cursor-trail"></div>
-
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
     </div>
-
     <script src="../scripts/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
   </body>
 </html>
